@@ -26,9 +26,23 @@ import utility.DriverManager;
 
 public class TestCases {
 	List<String> productnames = new ArrayList<String>();
+	
+	@BeforeMethod(groups="logingroup")
+	public void setup() {
+		DriverManager.getDriver("chrome");
+		DriverManager.url("https://www.saucedemo.com/v1/");
+		System.out.println("browser launched");
+		
+	}
+
+	@AfterSuite
+	public void teardown() {//
+	DriverManager.close();
+		System.out.println("browser close");
+	}
+	
 	@Test(priority = 1,groups="logingroup")
 	@Parameters({ "username", "password" })
-	
 	public void loginpage(String username, String password) {
 		// will have only have steps to implements
 		// login with username and password
@@ -57,19 +71,7 @@ public class TestCases {
 //
 //}
 //
-//	@BeforeMethod(groups="logingroup")
-//	public void setup() {
-//		DriverManager.getDriver("chrome");
-//		DriverManager.url("https://www.saucedemo.com/v1/");
-//		System.out.println("browser launched");
-//		
-//	}
-//
-//	@AfterSuite
-//	public void teardown() {//
-//	DriverManager.close();
-//		System.out.println("browser close");
-//	}
+	
 //	
 //		@Test(priority=3)
 //		public void productaddtocart() throws InterruptedException {

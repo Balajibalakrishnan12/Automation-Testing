@@ -7,12 +7,7 @@
     <classes>
       <class name="testing.TestCases">
         <methods>
-          <include name="overallcalculation"/>
-          <include name="teardown"/>
-          <include name="processingpayment"/>
-          <include name="productaddtocart"/>
-          <include name="productpage"/>
-          <include name="setup"/>
+          <include name="loginpage" invocation-numbers="0"/>
         </methods>
       </class> <!-- testing.TestCases -->
     </classes>
