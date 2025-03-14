@@ -13,7 +13,7 @@ pipeline{
         stage('Test'){
             steps{
                 echo 'run test'
-                sh 'mvn verify clean'
+                bat 'mvn verify clean'
             }
         }
         stage('Deploy'){
